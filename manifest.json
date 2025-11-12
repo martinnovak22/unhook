@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Scroll Unhook",
+  "version": "1.0",
+  "description": "Automatically redirects you away from Reels (FB/IG) or Shorts (YT).",
+  "permissions": ["tabs", "storage", "scripting", "webNavigation"],
+  "host_permissions": [
+    "*://www.youtube.com/*",
+    "*://www.facebook.com/*",
+    "*://www.instagram.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Scroll Unhook"
+  }
+}

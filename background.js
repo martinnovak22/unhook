@@ -4,7 +4,7 @@ import { getSetting } from "./utils/storageUtils.js";
 async function handleRedirect(tabId, changeInfo, tab) {
     if (changeInfo.status !== "complete" || !tab.url) return;
 
-    const enabled = await getSetting("enabled", true);
+    const enabled = await getSetting("redirectEnabled", true);
     if (!enabled) return;
 
     if (isScrollableUrl(tab.url)) {

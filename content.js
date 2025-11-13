@@ -14,13 +14,24 @@ function hideReelsLinks() {
   }
 }
 
+async function initHideObserver(state) {
+  const observer = new MutationObserver(async () => {
+    if (state.hideExploreEnabled) hideExploreLinks();
+    if (state.hideReelsEnabled) hideReelsLinks();
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  if (state.hideExploreEnabled) hideExploreLinks();
+  if (state.hideReelsEnabled) hideReelsLinks();
+}
+
 (async () => {
-  const { hideExploreEnabled } = await chrome.storage.sync.get("hideExploreEnabled");
-  const { hideReelsEnabled } = await chrome.storage.sync.get("hideReelsEnabled");
-  if (hideExploreEnabled){
-    hideExploreLinks()
-  }
-  if (hideReelsEnabled){
-    hideReelsLinks();
-  }
+  const state = await chrome.storage.sync.get([
+    "hideExploreEnabled",
+    "hideReelsEnabled"
+  ]);
+  if (!state.hideExploreEnabled && !state.hideReelsEnabled) return;
+
+  initHideObserver(state);
 })();

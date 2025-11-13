@@ -8,7 +8,7 @@ async function handleRedirect(tabId, changeInfo, tab) {
     if (!enabled) return;
 
     if (isScrollableUrl(tab.url)) {
-        const redirectUrl = getSafeRedirectURL(tab.url);
+        const redirectUrl = await getSafeRedirectURL(tab.url);
         console.log(`Redirecting from: ${tab.url} to ${redirectUrl}`);
         chrome.tabs.update(tabId, { url: redirectUrl });
     }

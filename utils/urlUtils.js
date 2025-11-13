@@ -1,3 +1,5 @@
+import { getSetting } from "./storageUtils.js";
+
 export function isScrollableUrl(url) {
     if (!url) return false;
     try {
@@ -14,9 +16,31 @@ export function isScrollableUrl(url) {
     }
 }
 
-export function getSafeRedirectURL(url) {
-    if (url.includes("youtube.com")) return "https://www.youtube.com/";
-    if (url.includes("facebook.com")) return "https://www.facebook.com/";
-    if (url.includes("instagram.com")) return "https://www.instagram.com/";
-    return "about:blank";
+export async function getSafeRedirectURL(url) {
+  const stored = await getSetting("customRedirectURL", "");
+
+  if (stored) return stored;
+
+  if (url.includes("youtube.com")) return "https://www.youtube.com/";
+  if (url.includes("facebook.com")) return "https://www.facebook.com/";
+  if (url.includes("instagram.com")) return "https://www.instagram.com/";
+
+  return "about:blank";
+}
+
+export function normalizeUrl(input) {
+  if (!input) return "";
+  let url = input.trim();
+  if (/^https?:\/\//i.test(url)) {
+    try {
+      return new URL(url).toString();
+    } catch {
+      return "";
+    }
+  }
+  try {
+    return new URL(`https://${url}`).toString();
+  } catch {
+    return "";
+  }
 }

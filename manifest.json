@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Scroll Unhook",
-  "version": "1.0",
-  "description": "Automatically redirects you away from Reels (FB/IG) or Shorts (YT).",
+  "name": "Addiction Unhook",
+  "version": "0.0.3",
+  "description": "Automatically redirects you away from Reels (FB/IG) or Shorts (YT). Hides stuff on IG/FB/YT",
   "permissions": ["tabs", "storage", "scripting", "webNavigation"],
   "host_permissions": [
     "*://www.youtube.com/*",

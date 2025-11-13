@@ -7,23 +7,30 @@
 </head>
 
 <body>
-    <h1>Scroll Unhook</h1>
+    <h1>Addiction Unhook</h1>
 
-    <div class="feature">
-        <label for="anti-scroll-toggle">Enable Redirect</label>
-        <input type="checkbox" id="anti-scroll-toggle" />
+    <div class="box">
+        <div class="tooltip">URL observer<span class="tooltiptext">Redirects when URL includes: /shorts/ /reels/ /reel/</span></div>
+
+        <div class="feature">
+            <label for="anti-scroll-toggle">Enable Redirect</label>
+            <input type="checkbox" id="anti-scroll-toggle" />
+        </div>
+
     </div>
+    <div class="box">
+        <div class="tooltip">Links remover<span class="tooltiptext">Hides links that go to reels or explore page</span></div>
 
-    <div class="feature">
-        <label for="hide-explore-toggle">Hide explore link</label>
-        <input type="checkbox" id="hide-explore-toggle" />
+        <div class="feature">
+            <label for="hide-explore-toggle">Hide explore link</label>
+            <input type="checkbox" id="hide-explore-toggle" />
+        </div>
+
+        <div class="feature">
+            <label for="hide-reels-toggle">Hide reels link</label>
+            <input type="checkbox" id="hide-reels-toggle" />
+        </div>
     </div>
-
-    <div class="feature">
-        <label for="hide-reels-toggle">Hide reels link</label>
-        <input type="checkbox" id="hide-reels-toggle" />
-    </div>
-
     <footer>v0.0.2</footer>
 
     <script type="module" src="popup.js"></script>

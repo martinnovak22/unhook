@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Addiction Unhook",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Automatically redirects you away from Reels (FB/IG) or Shorts (YT). Hides stuff on IG/FB/YT",
   "permissions": ["tabs", "storage"],
   "host_permissions": [

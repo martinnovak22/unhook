@@ -1,6 +1,6 @@
 {
   "name": "scroll-unhook",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Redirects away from Reels (Facebook/Instagram) and Shorts (YouTube).",
   "type": "module",
   "scripts": {
